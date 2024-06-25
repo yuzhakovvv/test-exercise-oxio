@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import Root from './Root'
 
-test('renders learn react link', () => {
-  render(<Root />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders NavBar', () => {
+  render(<Root />, { wrapper: MemoryRouter });
+  const appLogoAlement = screen.getByText(/Test App/i);
+  expect(appLogoAlement).toBeInTheDocument();
 });

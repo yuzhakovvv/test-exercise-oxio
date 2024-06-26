@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,7 +10,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { NavLink } from 'react-router-dom';
 
 const pages = [
   { label: 'Home', href: '/home' },
@@ -34,8 +34,8 @@ function NavBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -93,9 +93,9 @@ function NavBar() {
             {pages.map(({ label, href }) => (
               <Button
                 key={label}
-                href={href}
+                component={Link}
+                to={href}
                 onClick={handleCloseNavMenu}
-                
                 sx={{ my: 2, color: 'white', display: 'block' }}
                 >
                 {label}

@@ -2,8 +2,9 @@ import { createContext, useEffect, useState } from "react";
 
 import { User } from "../types/user";
 
-const UsersContext = createContext<{ users: User[] }>({
+const UsersContext = createContext<{ users: User[]; addUser: (user: User) => void }>({
   users: [],
+  addUser: () => {}
 });
 
 export const UsersProvider = ({ children }: { children: React.ReactNode }) => {
@@ -25,8 +26,15 @@ export const UsersProvider = ({ children }: { children: React.ReactNode }) => {
     fetchUsers();
   }, []);
 
+  const addUser = (user: User) => {
+    setUsers((state) => [
+      ...state,
+      user
+    ]);
+  }
+
   return (
-    <UsersContext.Provider value={{ users }}>
+    <UsersContext.Provider value={{ users, addUser }}>
       {children}
     </UsersContext.Provider>
   )

@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 
 import UsersTable from "./components/UsersTable";
 import AddUserModal from "./components/AddUserModal";
@@ -11,7 +11,7 @@ function Home() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <Container maxWidth="xl">
       <Box sx={{ m:  { xs: 0, md: 4 } }}>
         <Button
           variant="outlined"
@@ -25,7 +25,7 @@ function Home() {
 
         <AddUserModal open={open} handleClose={handleClose} />
       </Box>
-    </div>
+    </Container>
   );
 }
 

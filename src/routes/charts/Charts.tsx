@@ -50,7 +50,7 @@ function Charts() {
       justifyContent: 'center'
     }}>
       <Box sx={{ mb: 4 }}>
-        <Typography>Users Amount By Name First Letter</Typography>
+        <Typography tabIndex={0}>Users Amount By Name First Letter</Typography>
       </Box>
       
       <Box sx={{ maxHeight: 300, maxWidth: 300 }}>

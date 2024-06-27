@@ -151,7 +151,7 @@ export default function DataTable({ headCells, rows }: DataTableProps) {
                     key={row.id}
                   >
                     {headCells.map((headCell) => (
-                      <TableCell key={headCell.id} align="left">
+                      <TableCell key={headCell.id} tabIndex={0} align="left">
                         {row[headCell.id]}
                       </TableCell>
                     ))}

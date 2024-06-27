@@ -73,6 +73,7 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
         onClose={handleClose}
         PaperProps={{
           component: 'form',
+          "data-testid": 'add-user-form',
           onSubmit
         }}
       >
@@ -87,6 +88,7 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
             type="text"
             fullWidth
             variant="standard"
+            inputProps={{ "data-testid": "add-user-name-input" }}
           />
           <TextField
             required
@@ -97,6 +99,7 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
             type="email"
             fullWidth
             variant="standard"
+            inputProps={{ "data-testid": "add-user-email-input" }}
           />
           <TextField
             required
@@ -107,6 +110,7 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
             type="text"
             fullWidth
             variant="standard"
+            inputProps={{ "data-testid": "add-user-company-name-input" }}
           />
         </DialogContent>
         <DialogActions>

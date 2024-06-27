@@ -20,6 +20,7 @@ interface AddUserModalProps {
 export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
   const { users, addUser } = useContext(UsersContext);
 
+  const [isLoading, setIsLoading] = useState(false);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
 
@@ -44,6 +45,8 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
       }
     };
 
+    setIsLoading(true);
+
     let user: User;
     try {
       const response: any = await fetch('/users', { body }, users);
@@ -51,6 +54,7 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
       
       user = data.user;
     } catch (error) {
+      setIsLoading(false);
       setShowErrorAlert(true);
       return;
     }
@@ -107,7 +111,7 @@ export default function AddUserModal({ open, handleClose }: AddUserModalProps) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" disabled={isLoading}>Submit</Button>
         </DialogActions>
       </Dialog>
 

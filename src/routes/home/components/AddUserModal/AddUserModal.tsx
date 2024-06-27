@@ -8,9 +8,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Snackbar from '@mui/material/Snackbar';
 
-import UsersContext from '../../../contexts/UsersContext';
-import { User } from '../../../types/user';
-import { fetch } from '../../../api/fetch';
+import UsersContext from '../../../../contexts/UsersContext';
+import { User } from '../../../../types/user';
+import { fetch } from '../../../../api/fetch';
 
 interface AddUserModalProps {
   open: boolean;

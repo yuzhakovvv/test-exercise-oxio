@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
-import UsersContext from "../../../contexts/UsersContext";
-import DataTable, { HeadCell } from "./DataTable";
+import UsersContext from "../../../../contexts/UsersContext";
+import DataTable, { HeadCell } from "../DataTable";
 
 const headCells: HeadCell[] = [
   {

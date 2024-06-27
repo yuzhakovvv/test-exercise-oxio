@@ -6,7 +6,7 @@ import Root from "./root";
 import Charts from "./charts";
 import Home from "./home";
 
-const router = createBrowserRouter([
+export const routerConfig = [
   {
     path: "/",
     element: <Root />,
@@ -25,6 +25,8 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+]
+
+const router = createBrowserRouter(routerConfig);
 
 export default router;

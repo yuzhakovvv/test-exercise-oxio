@@ -50,7 +50,7 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 ### Folder Structure
 
-App routes are stored in `/src/routes` folder with corresponding components.
+App routes are stored in `src/routes` folder with corresponding components.
 
 ### Data Store
 
@@ -58,8 +58,23 @@ Data is stored in Context to make it available for all pages via a provider.
 
 ### Data Fetching
 
-Context is responsible for fetching data from https://jsonplaceholder.typicode.com/.
+- Provider is responsible for fetching data from https://jsonplaceholder.typicode.com/.
+- `api/fetch` mock is created to simulate successful or failing response to a *create user* request.
 
-`api/fetch` mock is created to simulate successful or failing response to a *create user* request.
+### Accessibility
+
+- Material UI components are used to ensure accessibility.
+- `tabIndex` is used to navigate through table cells and Charts page.
+- There is [no out of the box way](https://www.chartjs.org/docs/latest/general/accessibility.html) to make the Chart.js accessible. The chart is wrapped in a `div` with `aria-label` to provide a description of the chart.
+
+### Styling
+
+Inline styles are used for the sake of simplicity. Material UI components are used to ensure consistent styling.
+
+### Suggestions on Project Tooling
+
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+
 
 

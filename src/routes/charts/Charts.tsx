@@ -50,10 +50,14 @@ function Charts() {
       justifyContent: 'center'
     }}>
       <Box sx={{ mb: 4 }}>
-        <Typography tabIndex={0}>Users Amount By Name First Letter</Typography>
+        <Typography>Users Amount By Name's First Letter</Typography>
       </Box>
       
-      <Box sx={{ maxHeight: 300, maxWidth: 300 }}>
+      <Box
+        tabIndex={0}
+        aria-label="Chat that displays users amount by name's first letter"
+        sx={{ maxHeight: 300, maxWidth: 300 }}
+      >
         {data.datasets[0].data.length > 0 && (
           <Pie data={data} options={{
             plugins: {
